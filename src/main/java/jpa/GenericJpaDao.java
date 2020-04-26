@@ -6,9 +6,11 @@ import java.util.Optional;
 
 import javax.inject.Inject;
 
+import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import book.model.Book;
 import com.google.inject.persist.Transactional;
 
 public abstract class GenericJpaDao<T> {
