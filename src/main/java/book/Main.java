@@ -14,11 +14,10 @@ public class Main {
         Injector injector = Guice.createInjector(new PersistenceModule("test"));
         BookDao bookDao = injector.getInstance(BookDao.class);
 
-        for(int i=0; i<1000; i++) {
+        for (int i = 0; i < 1000; i++) {
             Book book = createBook();
             bookDao.persist(book);
         }
         bookDao.findAll().stream().forEach(System.out::println);
-        System.out.println(bookDao.findByIsbn13("9790928991863"));
     }
 }
